@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../Components/Assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(1, 48, 34, 0.158);
+}
+.frosed-container {
+  background: inherit;
+  width: 700px;
+  height: 400px;
+  position: absolute;
+  /* //adding overflow hidden */
+  overflow: hidden;
+}
+
+.frosed-container::before {
+  content: "";
+  width: 750px;
+  height: 550px;
+  background: inherit;
+  position: absolute;
+  /* giving minus -25px left position */
+  left: -30px;
+  right: 0;
+  /* giving minus -25px top position  */
+  top: -30px;
+  bottom: 0;
+  box-shadow: inset 0 0 0 2000px rgba(245, 221, 221, 0.205);
+  filter: blur(10px);
+}
+@media screen and (max-width: 768px) {
+  .frosed-container {
+    width: 100%;
+  }
+  .frosed-container::before {
+    width: 850px;
+  }
+}
+
+.intro {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.intro .logo h1 {
+  font-family: "MuseoModerno";
+  color: white;
+}
+.intro .description p {
+  font-family: "Comfortaa";
+  font-size: 20px;
+  font-weight: 400;
+}
+.intro .social-media a {
+  /* background-color: #367dd0; */
+  text-decoration: none;
+  color: rgb(223, 223, 223);
+  border: 1px solid white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 5px 20px;
+  margin: 0 5px;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.322), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.intro .social-media a:hover {
+  box-shadow: none;
+  color: #367dd0;
+}
+.intro .social-media a:nth-child(1):hover {
+  box-shadow: none;
+  color: rgb(235, 47, 47);
+}
